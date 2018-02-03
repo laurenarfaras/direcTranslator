@@ -10,10 +10,31 @@ div.row {
 
 .col {
   border: 1px solid black;
+  padding: 0px;
 }
 
-#messages li:nth-child(odd) {
+form {
+  padding: 1em;
+}
+
+#conversation {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+ }
+
+#conversation li {
+   padding: 5px 10px;
+   text-align: end;
+   padding-left: 3em;
+   padding-right: 1em;
+ }
+
+#conversation li:nth-child(odd) {
    background: #eee;
+   text-align: left;
+   padding-right: 3em;
+   padding-left: 1em;
 }
 
 ul {
