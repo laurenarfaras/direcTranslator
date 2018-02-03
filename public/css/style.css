@@ -1,0 +1,21 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+div.row {
+  height: -webkit-fill-available;
+  border: 3px solid yellowgreen;
+}
+
+.col {
+  border: 1px solid black;
+}
+
+#messages li:nth-child(odd) {
+   background: #eee;
+}
+
+ul {
+  list-style-type: none;
+}

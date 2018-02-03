@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Direction Translator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="/js/app.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="mainController">
+
+  <nav class="navbar">
+    <span class="navbar-brand mb-0 h1">Direction Translator</span>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Start Over</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Map</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Complete Interaction</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+
+        <ul>
+          <li ng-repeat="m in messages">
+            {{ m }}
+          </li>
+        </ul>
+
+      </div>
+      <div class="col">
+
+        <form>
+          <div class="form-group">
+            <label for="inputLanguage">Input Language</label>
+            <select class="form-control" id="inputLanguage">
+              <option>English</option>
+              <option>Spanish</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="outputLanguage">Output Language</label>
+            <select class="form-control" id="outputLanguage">
+              <option>English</option>
+              <option>Spanish</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputText">Text</label>
+            <textarea class="form-control" id="inputText" ng-model="message" rows="4"></textarea>
+          </div>
+          <button ng-click="send()" type="submit" class="btn btn-primary">Send</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
