@@ -2,17 +2,26 @@ var app = angular.module('myApp',[]);
 
 app.controller('mainController',['$scope',function($scope){
 
-  $scope.messages = []
+  $scope.messages = [];
 
-  $scope.send = function(){
-
-    // socket.emit('chat message', $scope.message);
-    // $scope.inputText="";
-
-    console.log('sending: ' + $scope.message);
+  $scope.send = function() {
     $scope.messages.push($scope.message);
-    console.log('messages: ' + $scope.messages);
     $scope.message = '';
+  }
+
+  $scope.translate = function() {
+    console.log('translating');
+    console.log('input = ' + $scope.input);
+    console.log('output = ' + $scope.output);
+    $scope.send();
+  }
+
+  $scope.clear = function() {
+    console.log('clearing');
+    $scope.messages = [];
+    $scope.message = '';
+    $scope.input = '';
+    $scope.output = '';
   }
 
 }]);

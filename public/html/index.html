@@ -17,7 +17,7 @@
     <span class="navbar-brand mb-0 h1">Direction Translator</span>
     <ul class="nav justify-content-end">
       <li class="nav-item">
-        <a class="nav-link" href="#">Start Over</a>
+        <a class="nav-link" ng-click="clear()">Start Over</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Map</a>
@@ -44,14 +44,14 @@
         <form>
           <div class="form-group">
             <label for="inputLanguage">Input Language</label>
-            <select class="form-control" id="inputLanguage">
+            <select class="form-control" id="inputLanguage" ng-model="input">
               <option>English</option>
               <option>Spanish</option>
             </select>
           </div>
           <div class="form-group">
             <label for="outputLanguage">Output Language</label>
-            <select class="form-control" id="outputLanguage">
+            <select class="form-control" id="outputLanguage" ng-model="output">
               <option>English</option>
               <option>Spanish</option>
             </select>
@@ -60,7 +60,7 @@
             <label for="inputText">Text</label>
             <textarea class="form-control" id="inputText" ng-model="message" rows="4"></textarea>
           </div>
-          <button ng-click="send()" type="submit" class="btn btn-primary">Send</button>
+          <button ng-click="translate()" type="submit" class="btn btn-primary">Send</button>
         </form>
 
       </div>
