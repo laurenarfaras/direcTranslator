@@ -9,6 +9,10 @@ server.get('/', function(request, response) {
   response.sendFile('index.html', {root: __dirname + '/public/html'});
 });
 
+server.get('/map', function(request, response) {
+  response.sendFile('map.jpg', {root: __dirname + '/public/assets'});
+});
+
 server.listen(port, function() {
   console.log('Now listening on port: ' + port);
 });
