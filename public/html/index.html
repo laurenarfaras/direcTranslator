@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="/js/app.js"></script>
 </head>
 <body ng-app="myApp" ng-controller="mainController">
@@ -20,7 +23,8 @@
         <a class="nav-link" ng-click="clear()">Start Over</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/map">Map</a>
+        <!-- <a class="nav-link" href="/map">Map</a> -->
+        <a class="nav-link" data-toggle="modal" data-target="#mapModal">Map</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://ufl.qualtrics.com/jfe/form/SV_3CMjuQCNd7Xw83X">Complete Interaction</a>
@@ -30,6 +34,27 @@
 
   <div class="container-fluid">
     <div class="row">
+      <!-- modal begin -->
+      <div class="modal" id="mapModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Campus Map</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="../assets/map.jpg" alt="campus-map">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal end -->
+      <!-- col 1 begin -->
       <div class="col">
 
         <ul id="conversation">
@@ -39,6 +64,8 @@
         </ul>
 
       </div>
+      <!-- col 1 end -->
+      <!-- col 2 begin -->
       <div class="col">
 
         <form>
@@ -64,6 +91,7 @@
         </form>
 
       </div>
+      <!-- col 2 end -->
     </div>
   </div>
 

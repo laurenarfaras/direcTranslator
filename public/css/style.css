@@ -5,7 +5,8 @@
 
 div.row {
   height: -webkit-fill-available;
-  border: 3px solid yellowgreen;
+  height: 38em;
+  /* border: 3px solid yellowgreen; */
 }
 
 .col {
@@ -39,4 +40,12 @@ form {
 
 ul {
   list-style-type: none;
+}
+
+.modal-dialog {
+  max-width: 80% !important;
+}
+
+img {
+  width: 100%;
 }
