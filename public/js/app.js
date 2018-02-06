@@ -13,36 +13,13 @@ app.controller('mainController',['$scope', '$http', function($scope, $http){
     console.log('translating');
     console.log('input = ' + $scope.input);
     console.log('output = ' + $scope.output);
-    var tar = 'en';
-    var src = 'en';
-    switch($scope.output){
-      case 'English':
-        tar = 'en';
-        break;
-      case 'Spanish':
-        tar = 'es';
-        break;
-      default:
-        tar = 'en';
-        break;
-    }
-    switch($scope.input){
-      case 'English':
-        src = 'en';
-        break;
-      case 'Spanish':
-        src = 'es';
-        break;
-      default:
-        src = 'en';
-        break;
-    }
-    $http.post(`https://translation.googleapis.com/language/translate/v2?q=${$scope.message}&target=${tar}&source=${src}&key=AIzaSyArCyLfgKWuKNVzm1b7FSZUjjAHDMySTXE`)
+
+    $http.post(`https://translation.googleapis.com/language/translate/v2?q=${$scope.message}&target=${$scope.output}&source=${$scope.input}&key=AIzaSyArCyLfgKWuKNVzm1b7FSZUjjAHDMySTXE`)
         .then(function(response) {
           console.log(response.data.data.translations[0].translatedText);
           $scope.messages.push(response.data.data.translations[0].translatedText);
         })
-    // $scope.send();
+
   }
 
   $scope.clear = function() {
